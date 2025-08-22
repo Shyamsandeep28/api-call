@@ -10,7 +10,7 @@ jobs:
         id: apicall
         run: |
           # Fetch latest GitHub Actions runner release info
-          response=$(curl -s https://api.github.com/repos/actions/runner/releases/latest)
+          response=$(curl -s https://api.github.com/orgs/ORG/actions/hosted-runners)
           echo "Full API Response:"
           echo "$response"
           
