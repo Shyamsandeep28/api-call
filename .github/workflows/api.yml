@@ -7,14 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Step 1 - Call GitHub API
-        id: apicall
+      
         run: |
           # Fetch latest GitHub Actions runner release info
-          response=$(curl -s https://api.open-meteo.com/v1/forecast?latitude=35&longitude=139&current_weather=true)
+          response=$(curl -s https://api.github.com/repos/actions/runner/releases/latest)
           echo "Full API Response:"
           echo "$response"
           
-          # Extract the release tag (like v2.320.0) using jq
-          version=$(echo "$response" | jq -r '.tag_name')
+        
           
           
