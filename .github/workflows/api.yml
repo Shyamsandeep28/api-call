@@ -10,7 +10,7 @@ jobs:
         id: apicall
         run: |
           # Fetch latest GitHub Actions runner release info
-          response=$(curl -s https://api.github.com/orgs/ORG/actions/hosted-runners)
+          response=$(curl -s https://api.open-meteo.com/v1/forecast?latitude=35&longitude=139&current_weather=true)
           echo "Full API Response:"
           echo "$response"
           
